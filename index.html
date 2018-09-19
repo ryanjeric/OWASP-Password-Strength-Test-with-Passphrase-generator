@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		OWASP Password Strength Test ft. Passphrase generator
+	</title>
+	<script src="owasp-password-strength-test.js"></script>
+    <script src="diceware.js"></script>
+    <script type="text/javascript">
+    		function gen() {
+    			var passphrase = diceware(5); //  diceware returns arr , 5 represent how many words
+    			// passphrase = passphrase.join(" "); // sample with space separator 
+    			window.prompt("Copy to clipboard: Ctrl+C, Enter", passphrase);
+    		}
+
+    		function test() {
+    			var passphrase = document.getElementById('password').value;
+    			var result = owaspPasswordStrengthTest.test(passphrase);
+    			func(result);
+    		}
+
+    		function func(obj) {
+    			var json = JSON.stringify(obj, null, 2);
+    			document.getElementById("result").innerHTML = json;
+    		};
+
+    </script>
+</head>
+<body>
+	<form>
+		<input id='password' type="Password" name="Password">	
+		<button type="button" onclick="test()">TEST</button>
+		<button type="button" onclick="gen()">GENERATE</button>
+	</form>
+
+	<pre id='result'></pre>
+</body>
+</html>
