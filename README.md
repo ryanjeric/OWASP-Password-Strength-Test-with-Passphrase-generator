@@ -6,7 +6,9 @@ Combined this 2 amazing JS script Password Tester and Passphrase Generator.
 
 -diceware-js
 
-SOURCE :
+# SOURCE :
+
+
 https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls
 
 https://github.com/nowsecure/owasp-password-strength-test
